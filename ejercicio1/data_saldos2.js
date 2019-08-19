@@ -1,3 +1,12 @@
+// Obtener el saldo por cada cliente
+// {
+//   id: 1
+//   nombre: "Andres",
+//   saldo: [3000, 5000, 4000],
+//   saldoTotal: //Saldo Total
+// }
+
+// Obtener el saldo total
 var cliente2 = [
   { id: 1, nombre: "Andres", saldo: [3000, 5000, 4000] },
   { id: 2, nombre: "Carlos", saldo: [2350, 3428, 12890] },

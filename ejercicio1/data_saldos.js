@@ -1,3 +1,27 @@
+// Obtener el saldo por cada cliente
+// {
+//   id: 1
+//   nombre: "Andres",
+//   saldo: [
+//     {
+//       id: "hipoteca",
+//       saldo: 3000
+//     },
+//     {
+//       id: "tarjeta MM",
+//       saldo: 5000
+//     },
+//     {
+//       id: "tarjeta VISA",
+//       saldo: 4000
+//     }
+//   ],
+//   saldoTotal: //Saldo Total
+
+// }
+
+// Obtener el saldo total
+// Obtener la suma total de solo las hipotecas
 var clientes = [
   {
     id: 1,
