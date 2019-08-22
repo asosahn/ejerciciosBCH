@@ -1,6 +1,23 @@
-1. Buscar por artista => buscar los integrantes si es banda.
-2. buscar artista => revisar que canciones son de ese artista =>
-buscar cancion 
+1. Buscar cliente (por _id) => buscar saldo y agregarlo al objeto cliente.
+2  Buscar cliente (por _id) => buscar saldo y agregar un campo de sumatotal y sumar todos los saldos.
+3. Buscar todos los clientes => buscar los saldos => como resultado
+un arreglo de todos los clientes y adentro del objeto cliente sus saldos
+
+Trae todos los clientes
+http://ip:3010/customer
+
+trae los saldos por cliente
+http://ip:3010/bill?customer=5d5c9d2ed59d3e1f074671cc
+
+trae todos los saldos
+http://localhost:3010/bill
+
+////////////////////////////////////
+
+
+1. Buscar por artista (por _id) => buscar los integrantes si es banda => unir el objeto artista con los miembros
+2. buscar artista (por _id)=> revisar que canciones son de ese artista =>
+buscar cancion => agregar a cada objeto de artistas sus canciones
 3. buscar todos los artistas y agregar las canciones de ese artista
 el arreglo final debe tener el objeto artista y dentro de el todas las canciones
 en un arreglo de canciones (arraglo de objeto canciones)
