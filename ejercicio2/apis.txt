@@ -1,0 +1,43 @@
+1. Buscar por artista => buscar los integrantes si es banda.
+2. buscar artista => revisar que canciones son de ese artista =>
+buscar cancion 
+3. buscar todos los artistas y agregar las canciones de ese artista
+el arreglo final debe tener el objeto artista y dentro de el todas las canciones
+en un arreglo de canciones (arraglo de objeto canciones)
+
+
+Trae todo de la tabla bandas
+http://ip: 3010/bands
+
+Si es tipo Banda trae los miembros de la banda
+http://ip: 3010/bands?artist=5d5e0bf188835d4a6b45a0df
+
+Trae las canciones por el id del artista
+http://ip: 3010/songbyartist?artist=5d5e0bf188835d4a6b45a0df
+
+Trae el artista de X canción por id de canciones
+http://ip:3010/songbyartist?song=5d5e0c9388835d4a6b45a0e3
+
+Trae toda la relación de canciones por artista
+http://ip:3010/songbyartist
+
+Trae todas las canciones
+http://ip:3010/songs
+
+Trae canciones por nombre
+http://localhost:3010/songs?name=no
+
+Trae todos los artistas
+http://ip:3010/artist
+
+Trae artistas por nombre
+http://localhost:3010/artist?name=no
+
+
+//////////////////////////////////
+Clima de la ciudad
+http://api.openweathermap.org/data/2.5/weather?appid=eeec9333b2b1ded1e170909b143d8734&q=tegucigalpa,hn
+
+Trae datos del pais
+https://restcountries.eu/rest/v2/name/honduras
+
