@@ -1,0 +1,104 @@
+<div class="container main-body">
+  <div class="row">
+    <div class="col-12">
+      <h4>Formularios <small>data</small></h4>
+      <hr>
+    </div>
+    <div class="col-12 mx-auto">
+      <form [formGroup]="form" (ngSubmit)="saveForm()" novalidate>
+        <div>
+          <div class="form-group row" >
+            <label class="col-2 col-form-label">Name</label>
+            <div class="col-8" formGroupName="fullName">
+
+              <!-- <input formControlName="name" class="form-control" [ngClass]="{'is-invalid': form.get('name')?.errors && form.controls['name']?.dirty}" type="text" placeholder="Name">
+              <div *ngIf="form.get('name')?.errors?.required && form.controls['name']?.dirty" class="invalid-feedback">
+                  Required
+                </div>
+              <div *ngIf="form.controls['name']?.errors?.minlength" class="invalid-feedback">
+                  Mínimo
+                </div>-->
+
+              <input formControlName="name" class="form-control" [ngClass]="{'is-invalid': form.get('fullName.name')?.errors && form.get('fullName.name')?.touched}" type="text" placeholder="Name">
+              <div *ngIf="form.get('fullName.name')?.errors?.required && form.controls['fullName'].controls['name']?.dirty" class="invalid-feedback">
+                  Required
+                </div>
+              <div *ngIf="form.get('fullName.name')?.errors?.minlength" class="invalid-feedback">
+                  Minimum
+                </div>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-2 col-form-label">About</label>
+            <div class="col-8">
+
+              <textarea formControlName="about" [ngClass]="{'is-invalid': form.get('about')?.errors && form.get('about')?.touched}" class="form-control" placeholder="about"></textarea>
+            </div>
+          </div>
+          <div class="form-group row">
+              <label class="col-2 col-form-label">Skills</label>
+              <div class="input-group col-md-8">
+                <button (click)="addSkills()" type="button" class="btn btn-primary">
+                  Add
+                </button>
+              </div>
+            </div>
+          <div class="form-group row" formArrayName="skills" *ngFor="let int of form.controls['skills'].controls; index as idx">
+              <label class="col-2 col-form-label">&nbsp;</label>
+            <div class="col-8"   >
+
+              <input [formControlName]="idx" class="form-control" [ngClass]="{'is-invalid': form.get('skills').controls[idx]?.errors && form.get('skills').controls[idx]?.touched}" type="text" placeholder="skills">
+
+            </div>
+
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-2 col-form-label">password</label>
+          <div class="col-md-8">
+
+            <input formControlName="password" class="form-control" type="text" placeholder="password">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-2 col-form-label">Repit password</label>
+          <div class="col-md-8">
+
+            <input formControlName="password2" class="form-control" type="text" placeholder="Repit password">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-2 col-form-label">Image</label>
+          <div class="col-md-8">
+
+            <input formControlName="image" class="form-control" type="email" placeholder="image">
+          </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label">País</label>
+            <div  class="col-md-8">
+
+             <select formControlName="country"  class="form-control" name="country" >
+               <option [value]="country.code" *ngFor="let country of countries">{{country.name}}</option>
+             </select>
+            </div>
+          </div>
+
+        <div class="form-group row">
+          <label class="col-2 col-form-label">&nbsp;</label>
+          <div class="input-group col-md-8">
+            <button type="submit" class="btn btn-outline-primary">
+              Guardar
+            </button>
+          </div>
+        </div>
+      </form>
+      <pre>
+        {{form.valid}}
+        {{form.status}}
+      </pre>
+    </div>
+  </div>
+</div>
